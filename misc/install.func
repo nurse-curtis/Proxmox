@@ -90,7 +90,7 @@ setting_up_container() {
   locale-gen >/dev/null
   echo $tz >/etc/timezone
   ln -sf /usr/share/zoneinfo/$tz /etc/localtime
-  for ((i = RETRY_NUM; i > 0; i--)); do
+  for ((i = 20; i > 0; i--)); do
     if [ "$(hostname -I)" != "" ]; then
       break
     fi
